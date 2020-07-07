@@ -4,9 +4,10 @@
 // actaul hang man => tbd 5 imgs
 
 import React, { Component } from 'react'
+import {connect} from "react-redux"
 
 
-export default class hangmanControl extends Component {
+class HangmanControl extends Component {
   render() {
     return (
       <div>
@@ -15,3 +16,5 @@ export default class hangmanControl extends Component {
     )
   }
 }
+HangmanControl = connect()(HangmanControl)
+export default HangmanControl
