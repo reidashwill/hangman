@@ -36,10 +36,85 @@
     transform: rotate(360deg);
   }
 }
-.main{
+.main {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.button-cont {
+  width: 60vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+.button-cont button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px;
+  border: rgb(0, 128, 255) 1px solid;
+  color: rgb(0, 128, 255);
+}
+
+.button-cont button:hover {
+  border: rgb(0, 128, 255) 1px solid;
+  background-color: rgb(0, 128, 255);
+  color: white;
+}
+
+.button-cont button:disabled {
+  border: red 1px solid;
+  background-color: white;
+  color: red;
+}
+.start {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: 900;
+  transition: all 0.5s linear;
+}
+
+.start:hover {
+  transform: scale(1.1) rotate(360deg);
+  background-color: green;
+  color: white;
+  border: green 1px solid;
+}
+
+.guesses span {
+  font-weight: 900;
+  font-size: 16px;
+}
+.word {
+  width: 60vw;
+  text-align: center;
+  font-size: 50px;
+}
+.lives,
+.reset {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.reset button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: red;
+  border: 1px solid red;
+  font-weight: 900;
+}
+.reset button:hover {
+  color: white;
+  background-color: red;
+}
+button {
+  font-weight: 900;
+  transition: linear 0.5s all;
 }

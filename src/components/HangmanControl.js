@@ -85,23 +85,26 @@ displayWord=()=>{
   
     return (
       <div className="main">
-        {!this.props.game? <button onClick={this.startGame}>Start</button>:
+        {!this.props.game? <button className="start" onClick={this.startGame}>START</button>:
         <div className="game-screen">
           <h2>{this.props.win? "Congrats you win": ''}</h2>
-          <h1>{this.props.wordToGuess.map((letter,i)=><span key={i} >{letter.guessed? letter.letter: "_"} </span>)}</h1>
+          <h1 className="word">{this.props.wordToGuess.map((letter,i)=><span key={i} >{letter.guessed? letter.letter: "_"} </span>)}</h1>
+              <div className="button-cont">
               {alph.map(letter=><button  key={letter} onClick={(event)=>this.guess(letter,event)}>{letter}</button>)}
+              </div>
               <br/>
 
           <div className="lives">
             {this.props.lives>0?<Rate disabled character={<HeartFilled/>} style={{color:"red"}} value={this.props.lives}/>:<p> You lost :( the word was <strong>{this.displayWord()}</strong></p>}
           </div>
 
-          <div className="guesses"> 
+          {/* <div className="guesses"> 
             <h2>Guesses:</h2>
             {this.props.guessedLetters.map((guess, i)=><span key={i}> {guess} </span>)}
-          </div>
-
+          </div> */}
+          <div className="reset">
           <button onClick={this.restart}>reset</button>
+          </div>
        </div>
         }  
       </div>
