@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Word Game
 
-## Available Scripts
+#### By Eric Settels, Josh Hellman & Reid Ashwill
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+A project made to practice React with Redux fundamentals.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Stories
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+As a user, I want to be able to see how many guesses I have left.
 
-### `npm test`
+As a user, I want to be able to see which letters I have guessed.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As a user, I want to be able to see the letters that I have guessed correctly.
 
-### `npm run build`
+As a user, I want to see what the word was if I do not guess correctly before running out of guesses.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+As a user, I want to be able to reset the game at any point.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+As a user, I want to see a win screen if i guess all letters correctly.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup/Installation Requirements
 
-### `npm run eject`
+- _Navigate to https://github.com/reidashwill/hangman_
+- _clone the respository to your local machine_
+- _navigate to the cloned directory and open in your text editor of choice to view code_
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- _from the terminal inside the cloned project directory, run the command: npm install._
+- _run the command: npm run start to start a live server on your local machine_
+- _In your browser of choice, navigate to localhost:3000_
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+View project live in the browser at: https://generic-word-game.herokuapp.com/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Known Bugs
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+No known bugs at this time
 
-## Learn More
+## Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- _JavaScript_
+- _React_
+- _PropTypes library_
+- _CSS_
+- _Redux_
+- _Ant Design library_
+- _Random Word library_
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### License
 
-### Code Splitting
+_Licensed under the MIT license_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Copyright (c) 2020 **_Eric Settles, Josh Hellman & Reid Ashwill_**

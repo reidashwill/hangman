@@ -37,12 +37,14 @@ getIndexes=(arr,letter)=>{
   let indexes = this.getIndexes(word, letter)
  
   if (indexes.length>0){
+    event.target.setAttribute("class","green")
     indexes.forEach((elementIndex)=>{
       dispatch(right(elementIndex))
     })
     this.checkWin()
   } else{
     dispatch(loseLife())
+    event.target.setAttribute("class","red")
 
   }
 }
@@ -81,7 +83,7 @@ displayWord=()=>{
       <div className="main">
         {!this.props.game? <button className="start" onClick={this.startGame}>START</button>:
         <div className="game-screen">
-          <h2>{this.props.win? "Congrats you win": ''}</h2>
+          <h2 className="win">{this.props.win? "Congrats you win": ''}</h2>
 
           <h1 className="word">
             {this.props.wordToGuess.map((letter,i)=><span key={i} >{letter.guessed? letter.letter: "_"} </span>)}
