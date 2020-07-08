@@ -56,9 +56,6 @@ checkWin=()=>{
   if(win){
     const {dispatch} = this.props;
     dispatch(setWin())
-    setTimeout(() => {
-      dispatch(reset())
-    },3000);
   }
 }
 restart=()=>{
@@ -71,9 +68,6 @@ displayWord=()=>{
   this.props.wordToGuess.forEach(e => {
     word+=e.letter
   });
-  setTimeout(() => {
-    this.props.dispatch(reset())
-  },5000);
   return word
 }
 
@@ -88,24 +82,22 @@ displayWord=()=>{
         {!this.props.game? <button className="start" onClick={this.startGame}>START</button>:
         <div className="game-screen">
           <h2>{this.props.win? "Congrats you win": ''}</h2>
-          <h1 className="word">{this.props.wordToGuess.map((letter,i)=><span key={i} >{letter.guessed? letter.letter: "_"} </span>)}</h1>
-              <div className="button-cont">
-              {alph.map(letter=><button  key={letter} onClick={(event)=>this.guess(letter,event)}>{letter}</button>)}
-              </div>
-              <br/>
+
+          <h1 className="word">
+            {this.props.wordToGuess.map((letter,i)=><span key={i} >{letter.guessed? letter.letter: "_"} </span>)}
+          </h1>
+          <div className="button-cont">
+            {alph.map(letter=><button  key={letter} onClick={(event)=>this.guess(letter,event)}>{letter}</button>)}
+          </div>
 
           <div className="lives">
             {this.props.lives>0?<Rate disabled character={<HeartFilled/>} style={{color:"red"}} value={this.props.lives}/>:<p> You lost :( the word was <strong>{this.displayWord()}</strong></p>}
           </div>
 
-          {/* <div className="guesses"> 
-            <h2>Guesses:</h2>
-            {this.props.guessedLetters.map((guess, i)=><span key={i}> {guess} </span>)}
-          </div> */}
           <div className="reset">
-          <button onClick={this.restart}>reset</button>
+            <button onClick={this.restart}>reset</button>
           </div>
-       </div>
+        </div>
         }  
       </div>
     )
