@@ -1,17 +1,13 @@
-// state entered letters =>array
-// state of lives => number
-// word being guessed => string/array
-// actaul hang man => tbd 5 imgs
 
 import React, { Component} from 'react'
 import {connect} from "react-redux"
 import { Rate } from 'antd';
 import { HeartFilled } from '@ant-design/icons';
 import randomWords from 'random-words'
+import {setWord, reset, right, toggle, setWin, loseLife, addLetter} from '../actions'
 
 class HangmanControl extends Component {
 // function to return array of indexes of the word to guess state that match guessed letter
-
 
 getIndexes=(arr,letter)=>{
   let indexes =[]
@@ -22,33 +18,32 @@ getIndexes=(arr,letter)=>{
   })
   return indexes;
 }
+
 // will eventually set the word from Api or word list
  startGame=()=>{
    const {dispatch} = this.props;
-   const action ={type: "SET_WORD", word: randomWords()}
-   dispatch(action)
-   dispatch({type: "TOGGLE"})
+   dispatch(setWord(randomWords()))
+   dispatch(toggle())
  }
 
  //main function where the gussedletter is compared and the game updated
  guess=(letter, event)=>{
-   event.target.setAttribute("disabled",true)
+  event.target.setAttribute("disabled",true)
   const word = this.props.wordToGuess; 
   const {dispatch} = this.props;
-  const action = {type:"ADD_LETTER", letter:letter}
-  dispatch(action)
+  
+  dispatch(addLetter(letter))
   //see above declaration
   let indexes = this.getIndexes(word, letter)
  
   if (indexes.length>0){
     indexes.forEach((elementIndex)=>{
-      let trueAction = {type: 'RIGHT', index:elementIndex}
-      dispatch(trueAction)
+      dispatch(right(elementIndex))
     })
     this.checkWin()
   } else{
-    let livesAction = {type: "LOSE_LIFE"}
-    dispatch(livesAction)
+    dispatch(loseLife())
+
   }
 }
 checkWin=()=>{
@@ -60,27 +55,24 @@ checkWin=()=>{
   })
   if(win){
     const {dispatch} = this.props;
-    let winAction = {type: "SET_WIN"}
-    dispatch(winAction)
+    dispatch(setWin())
     setTimeout(() => {
-      dispatch({type:"RESET"})
+      dispatch(reset())
     },3000);
   }
 }
 restart=()=>{
   const {dispatch} = this.props;
-  let resetAction = {type: "RESET"}
-  dispatch(resetAction)
+  dispatch(reset())
 }
 
 displayWord=()=>{
  let word = ''
- console.log("something")
   this.props.wordToGuess.forEach(e => {
     word+=e.letter
   });
   setTimeout(() => {
-    this.props.dispatch({type:"RESET"})
+    this.props.dispatch(reset())
   },5000);
   return word
 }
