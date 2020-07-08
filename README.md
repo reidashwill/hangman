@@ -22,7 +22,7 @@ As a user, I want to see a win screen if i guess all letters correctly.
 
 ## Setup/Installation Requirements
 
-- _Navigate to https://github.com/reidashwill/hangman_
+- _Navigate to https://github.com/reidashwill/word-game_
 - _clone the respository to your local machine_
 - _navigate to the cloned directory and open in your text editor of choice to view code_
 
