@@ -1,12 +1,10 @@
-import React from 'react';
-import HangmanControl from './HangmanControl'
-import 'antd/dist/antd.css'; //======> need this for antd
-import '../App.css';
+import React from "react";
+import WordGameController from "./WordGameController";
+import "antd/dist/antd.css"; //======> need this for antd
+import "../App.css";
 
 function App() {
-  return (
-   <HangmanControl/>
-  );
+  return <WordGameController />;
 }
 
 export default App;

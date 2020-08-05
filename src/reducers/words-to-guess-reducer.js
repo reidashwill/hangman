@@ -1,15 +1,14 @@
-export default (state=[], action)=>{
-  const {word, index} = action;
+export default (state = [], action) => {
+  const { word, index } = action;
   switch (action.type) {
     case "SET_WORD":
-      let temp=[]
-     let letters= [...word]
-      letters.forEach(letter => {
-        temp.push({letter, guessed:false})
-        
+      let guessedLetters = [];
+      let letters = [...word];
+      letters.forEach((letter) => {
+        guessedLetters.push({ letter, guessed: false });
       });
 
-      return temp;
+      return guessedLetters;
 
     case "RIGHT":
       let guessed = [...state];
@@ -18,8 +17,8 @@ export default (state=[], action)=>{
 
     case "RESET":
       return [];
-   
+
     default:
       return state;
   }
-}
+};

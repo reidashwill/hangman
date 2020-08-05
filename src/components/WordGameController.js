@@ -13,7 +13,7 @@ import {
   addLetter,
 } from "../actions";
 
-class HangmanControl extends Component {
+class WordGameController extends Component {
   // function to return array of indexes of the word to guess state that match guessed letter
 
   getIndexes = (arr, letter) => {
@@ -54,6 +54,7 @@ class HangmanControl extends Component {
       event.target.setAttribute("class", "red");
     }
   };
+
   checkWin = () => {
     let win = true;
     this.props.wordToGuess.forEach((letter) => {
@@ -138,5 +139,5 @@ const mapStateToProps = (state) => {
   return { guessedLetters, lives, wordToGuess, win, game };
 };
 
-HangmanControl = connect(mapStateToProps)(HangmanControl);
-export default HangmanControl;
+WordGameController = connect(mapStateToProps)(WordGameController);
+export default WordGameController;
